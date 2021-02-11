@@ -31,5 +31,19 @@ This is a practice for MERN full stack. I'll create a to-do exercise tracker web
   + Execute $ `node index.js`
 
 
+### Routes
+- There are three things that the app needs to do. For each task, we need to create routes that will define various endpoints that the todo app will depend on
+  + create a task
+  + view all tasks
+  + delete a completed task.
+- Create a folder `routes/`
+  + $ `mkdir routes/`
+  + $ `cd routes/`
+  + then create an file `api.js`
+- Reference to Express.js's Router object
+  + [express.Router([options])](https://expressjs.com/en/5x/api.html#express.router)
+  + [Express Router object](https://expressjs.com/en/5x/api.html#router)
+
+
 ### Reference
 - [Digital Ocean-How To Get Started with the MERN Stack](https://www.digitalocean.com/community/tutorials/getting-started-with-the-mern-stack)
