@@ -3,8 +3,8 @@ This is a practice for MERN full stack. I'll create a to-do exercise tracker web
 
 
 ### Introduction
-- The MERN stack consists of MongoDB, Express, React / Redux, and Node.js. The MERN stack is one of the most popular JavaScript stacks for building modern single-page web applications.
-- In this tutorial, you will build a todo application that uses a RESTful API, which you will also build later in this tutorial.
+- The `MERN` stack consists of `MongoDB`, `Express`, `React/Redux`, and `Node.js`. The MERN stack is one of the most popular JavaScript stacks for building modern single-page web applications.
+- In this tutorial, you will build a todo application that uses a **RESTful API**, which you will also build later in this tutorial.
 
 
 ### Prerequisites
