@@ -112,5 +112,64 @@ This is a practice for MERN full stack. I'll create a to-do exercise tracker web
     ```
 
 
+### Database
+- We need a database where we will store our data.For this we will make use of [mlab](https://mlab.com/). Follow this [doc](https://docs.mlab.com/connecting/) to get started with mlab. After setting up your database you need to update `index.js` file with the following code:
+  + ```javascript 
+      const express = require('express');
+      const bodyParser = require('body-parser');
+      const mongoose = require('mongoose');
+      const routes = require('./routes/api');
+      const path = require('path');
+      require('dotenv').config();
+
+      const app = express();
+
+      const port = process.env.PORT || 5000;
+
+      //connect to the database
+      mongoose.connect(process.env.DB, { useNewUrlParser: true , useUnifiedTopology: true })
+        .then(() => console.log(`Database connected successfully`))
+        .catch(err => console.log(err));
+
+      //since mongoose promise is depreciated, we overide it with node's promise
+      mongoose.Promise = global.Promise;
+
+      app.use((req, res, next) => {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        next();
+      });
+
+      app.use(bodyParser.json());
+
+      app.use('/api', routes);
+
+      app.use((err, req, res, next) => {
+        console.log(err);
+        next();
+      });
+
+      app.listen(port, () => {
+        console.log(`Server running on port ${port}`)
+      });
+      ```
+  + Use `process.env` to access environment variables, which need to be created. Create a file in your root directory with name `.env` and edit:
+    * `DB = mongodb+srv://hans:<password>@todo-exercise-db.qjosq.mongodb.net/<dbname>?retryWrites=true&w=majority`
+- Reminder: $ `npm install dotenv`
+  + Then require and configure it in `index.js`
+    * `require('dotenv').config();`
+  + Using environment variables instead of writing credentials to the application code directly can hide sensitive information from our versioning system. It is considered a best practice to separate configuration and secret data from application code in this manner.
+
+
+### Testing Api
+- Make sure our RESTful api is working. Since our frontend is not ready yet, we can make use of some api development clients to test our code. We can use of [Postman](https://www.getpostman.com/) or [Insomnia](https://insomnia.rest/).
+- First, start your server
+  + $ `node index.js`
+- Second, open your client, create a `get` method and navigate to `http://localhost:5000/api/todos`
+  + ![Test RESTful APIs](./pics/Test%20RESTful%20APIs.gif)
+- You should test all the api endpoints and make sure they are working. For the endpoints that require body, you should send json back with the necessary fields since it’s what we setup in our code.
+
+
+
 ### Reference
 - [Digital Ocean-How To Get Started with the MERN Stack](https://www.digitalocean.com/community/tutorials/getting-started-with-the-mern-stack)
