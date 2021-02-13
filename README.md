@@ -170,6 +170,14 @@ This is a practice for MERN full stack. I'll create a to-do exercise tracker web
 - You should test all the api endpoints and make sure they are working. For the endpoints that require body, you should send json back with the necessary fields since it’s what we setup in our code.
 
 
+### Creating the Frontend
+- Since we are done with the functionality we want from our api, it is time to create an interface for the client to interact with the api.
+  + In the same root directory as your backend code, use [create-react-app](https://create-react-app.dev/docs/getting-started) command to scaffold our app.
+    * $ `create-react-app client`
+    * This will create a new folder in your todo directory called client, where you will add all the react code.
+
+
+
 
 ### Reference
 - [Digital Ocean-How To Get Started with the MERN Stack](https://www.digitalocean.com/community/tutorials/getting-started-with-the-mern-stack)
