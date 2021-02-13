@@ -4,21 +4,28 @@
   "description": "This is a practice for MERN full stack. I'll create a to-do exercise tracker website using the MERN stack.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "start-watch": "nodemon index.js",
+    "dev": "concurrently \"yarn run start-watch\" \"cd client && yarn start\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hans-Tsai/MERN-stack-exercise.git"
   },
   "author": "Hans-Tsai",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Hans-Tsai/MERN-stack-exercise/issues"
   },
   "homepage": "https://github.com/Hans-Tsai/MERN-stack-exercise#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.15"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.7"
   }
 }
