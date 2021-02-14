@@ -177,6 +177,17 @@ This is a practice for MERN full stack. I'll create a to-do exercise tracker web
     * This will create a new folder in your todo directory called client, where you will add all the react code.
 
 
+### Running the React App
+- Before testing the react app, there are a number od dependencies that need to be installed.
+  + Install [concurrently](https://www.npmjs.com/package/concurrently) as a **dev dependency**
+    * $ `npm install concurrently --save-dev`
+  + Install [nodemon](https://www.npmjs.com/package/nodemon) as a **dev dependency**
+    * $ `npm install nodemon --save-dev`
+- Enter into `./client/` folder, then locate the package.json file and add the key value pair below inside it. This proxy setup in our package.json file will enable us make api calls without having to type the full url, just /api/todos will get all our todos.
+  + `"proxy": "http://localhost:5000"`
+- Go back to the root directory, and make sure we're not in the `./client/` directory.
+  + Run $ `npm run dev`, and our app should be open and running on [localhost:3000](http://localhost:3000/)
+
 
 
 ### Reference
