@@ -40,7 +40,7 @@ class Todo extends Component {
 
     return(
       <div>
-        <h1>My Todo(s)</h1>
+        <h1>我的待瓣事項清單</h1>
         <Input getTodos={ this.getTodos }/>
         <ListTodo todos={ todos } deleteTodo={this.deleteTodo}/>
       </div>
