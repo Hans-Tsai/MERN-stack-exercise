@@ -25,6 +25,16 @@ class Todo extends Component {
       .catch(err => console.log(err))
   }
 
+  deleteTodo = (id) => {
+    axios.delete(`/api/todos/${id}`)
+      .then(res => {
+        if(res.data){
+          this.getTodos()
+        }
+      })
+      .catch(err => console.log(err))
+  }
+
   render() {
     let { todos } = this.state;
 
