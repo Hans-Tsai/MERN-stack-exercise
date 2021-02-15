@@ -5,7 +5,7 @@ const ListTodo = ({ todos, deleteTodo }) => {
     <ul>
       {
         todos &&
-          todos.length < 0 ? 
+          todos.length > 0 ? 
           (
             todos.map(todo => {
               return (
